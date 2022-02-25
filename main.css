@@ -1,0 +1,148 @@
+html {
+    font-size: 20px;
+}
+
+body {
+    font-family: "Comic Sans MS", sans-serif;
+    color: #213053;
+    margin: 0;
+}
+
+header {
+    z-index: 1;
+    position: sticky;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 0 5px 0 #0006;
+}
+
+.header__logo {
+    height: 50px;
+}
+
+.container {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 12px;
+    padding: 30px calc(50% - 500px);
+}
+
+.card {
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 0 #0006;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    transition: all .6s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px 1px rgba(34, 60, 80, 0.6);
+    opacity: 1;
+}
+
+.card__img {
+    height: 150px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: .7;
+}
+
+.card:hover .card__img {
+    opacity: 1;
+    transition: .6s linear;
+}
+
+.card__rate {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card__rate img {
+    height: 10px;
+}
+
+footer {
+    box-shadow: 0 0 5px 0 #0006;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(46, 4, 231, 0.467);
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay.visible {
+    display: flex;
+}
+
+.resume {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    gap: 0 50px;
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid;
+    border-radius: 10px;
+    position: relative;
+    max-width: 1000px;
+}
+
+.resume__photo {
+    max-width: 100%;
+}
+
+.resume__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-image: url(img/close.png);
+    background-position: center 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    cursor: wait;
+}
+
+.catup {
+    position: fixed;
+    width: 300px;
+    transform: rotate(45deg);
+}
+
+.overlay.visible .catup {
+    animation: 1s catup;
+    bottom: -10%;
+    left: -10%;
+}
+
+@keyframes catup {
+    0% {
+        bottom: -100%;
+        left: -100%;
+    }
+    100% {
+        bottom: -10%;
+        left: -10%;
+    }
+}
